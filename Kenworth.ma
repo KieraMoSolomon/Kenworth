@@ -1,6 +1,6 @@
 //Maya ASCII 2017 scene
 //Name: Kenworth.ma
-//Last modified: Wed, Nov 09, 2016 10:35:15 AM
+//Last modified: Wed, Nov 09, 2016 10:45:04 AM
 //Codeset: UTF-8
 requires maya "2017";
 requires "stereoCamera" "10.0";
@@ -15,15 +15,15 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "4BCC64B8-834B-8EBC-2B7B-6C97DD37E3EE";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 40.369587076004905 134.69416770865121 157.71759522022464 ;
-	setAttr ".r" -type "double3" -50.738352727670076 19.799999999976574 -3.380401413664972e-15 ;
+	setAttr ".t" -type "double3" 167.39036984714915 38.142442723431458 127.56507316787604 ;
+	setAttr ".r" -type "double3" -17.138352727675169 62.199999999999747 3.4097832210047644e-15 ;
 	setAttr ".rp" -type "double3" 0 6.2172489379008766e-15 0 ;
 	setAttr ".rpt" -type "double3" 3.9034766474702878e-18 -4.0244345079259028e-18 2.236300273600676e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A39153AD-8049-73A7-16D9-AB8766A6B7EF";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 201.32392442358753;
+	setAttr ".coi" 201.32392442361055;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
