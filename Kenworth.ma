@@ -1,6 +1,6 @@
 //Maya ASCII 2017 scene
 //Name: Kenworth.ma
-//Last modified: Sun, Dec 11, 2016 08:42:24 PM
+//Last modified: Sun, Dec 11, 2016 08:43:26 PM
 //Codeset: UTF-8
 requires maya "2017";
 requires "stereoCamera" "10.0";
@@ -29875,11 +29875,11 @@ createNode mesh -n "RightWheelCover1Shape" -p "RightWheelCover1";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "LeftFuelTank1";
+createNode transform -n "LeftAirCleaner";
 	rename -uid "6BEABA80-CC45-58BB-5773-99A08AC6E945";
 	setAttr ".t" -type "double3" 13.788562580938489 -8.2371707973891866 32.339456746903743 ;
 	setAttr ".s" -type "double3" 2 4.0438931887020093 2 ;
-createNode mesh -n "LeftFuelTank1Shape" -p "LeftFuelTank1";
+createNode mesh -n "LeftAirCleanerShape" -p "LeftAirCleaner";
 	rename -uid "3B17454A-8844-FA1F-3053-4EAEA85BF471";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -30056,11 +30056,11 @@ createNode mesh -n "LeftFuelTank1Shape" -p "LeftFuelTank1";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "LeftFuelTank2";
+createNode transform -n "RightAirCleaner";
 	rename -uid "996994AD-7C4E-0884-0069-D68AD8D3417E";
 	setAttr ".t" -type "double3" -12.973909208364315 -8.2371707973891866 32.339456746903743 ;
 	setAttr ".s" -type "double3" 2 4.0438931887020093 2 ;
-createNode mesh -n "LeftFuelTank2Shape" -p "LeftFuelTank2";
+createNode mesh -n "RightAirCleanerShape" -p "RightAirCleaner";
 	rename -uid "874914DD-A044-16BD-1E0E-3E8DA13F3490";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -31938,8 +31938,8 @@ connectAttr "WheelShape8.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "WheelShape9.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "WheelShape10.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "RightWheelCover1Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "LeftFuelTank1Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "LeftFuelTank2Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "LeftAirCleanerShape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "RightAirCleanerShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId1.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId2.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId3.msg" ":initialShadingGroup.gn" -na;
