@@ -1,6 +1,6 @@
 //Maya ASCII 2017 scene
 //Name: Kenworth.ma
-//Last modified: Sun, Dec 11, 2016 10:13:01 PM
+//Last modified: Sun, Dec 11, 2016 10:14:17 PM
 //Codeset: UTF-8
 requires maya "2017";
 requires "stereoCamera" "10.0";
@@ -30995,11 +30995,11 @@ createNode mesh -n "SkidPlateShape" -p "SkidPlate";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pCube1";
+createNode transform -n "LeftQuarterFender";
 	rename -uid "ACA2A73B-DB43-99BB-54F3-CE8F8A1E9529";
 	setAttr ".t" -type "double3" 19.097100785508569 -13.05441087141616 -27.288629762824954 ;
 	setAttr ".s" -type "double3" 14.634665347544194 0.83333334302888495 29.94694784477646 ;
-createNode mesh -n "pCubeShape1" -p "pCube1";
+createNode mesh -n "LeftQuarterFenderShape" -p "LeftQuarterFender";
 	rename -uid "3886B316-7243-3079-5608-3D906741909F";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -31015,6 +31015,73 @@ createNode mesh -n "pCubeShape1" -p "pCube1";
 		0.19048369 0 0 0.19048369 0 0 0.19048369 0 0 0.19048369 0 0 0.018180875 0 0 0.018180875 
 		0 0 0.018180875 0 0 0.018180875 0 -2.6294868 0.075683028 0 -2.6294868 0.075683028 
 		0 -2.0978029 0.051096208 0 -2.0978029 0.051096208;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode transform -n "RightQuarterFender";
+	rename -uid "CA1411BC-3E4C-ACD5-BA84-D4A44ECEA2EA";
+	setAttr ".t" -type "double3" -18.318239679115237 -13.05441087141616 -27.288629762824954 ;
+	setAttr ".s" -type "double3" 14.634665347544194 0.83333334302888495 29.94694784477646 ;
+createNode mesh -n "RightQuarterFenderShape" -p "RightQuarterFender";
+	rename -uid "12FC3DBE-A446-79F1-74A4-E18A0027E8D2";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.5 0.625 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 30 ".uvst[0].uvsp[0:29]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25 0.3148725 0.25 0.375 0.3101275 0.625 0.3101275 0.6851275
+		 0.25 0.625 0.9398725 0.6851275 0 0.3148725 0 0.375 0.9398725 0.33248529 0.25 0.375
+		 0.29251471 0.625 0.29251471 0.66751468 0.25 0.625 0.95748532 0.66751468 0 0.33248529
+		 0 0.375 0.95748532;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 16 ".pt[0:15]" -type "float3"  0 -7.4975033 -0.057502173 
+		0 -7.4975033 -0.057502173 0 -8.0291862 -0.032915317 0 -8.0291862 -0.032915317 0 0 
+		0.19048369 0 0 0.19048369 0 0 0.19048369 0 0 0.19048369 0 0 0.018180875 0 0 0.018180875 
+		0 0 0.018180875 0 0 0.018180875 0 -2.6294868 0.075683028 0 -2.6294868 0.075683028 
+		0 -2.0978029 0.051096208 0 -2.0978029 0.051096208;
+	setAttr -s 16 ".vt[0:15]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
+		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 -0.5 0.5 0.25949001 0.5 0.5 0.25949001
+		 0.5 -0.5 0.25949001 -0.5 -0.5 0.25949001 -0.5 0.5 0.32994115 0.5 0.5 0.32994115 0.5 -0.5 0.32994115
+		 -0.5 -0.5 0.32994115;
+	setAttr -s 28 ".ed[0:27]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 12 0
+		 3 13 0 4 6 0 5 7 0 6 11 0 7 10 0 8 4 0 9 5 0 10 14 0 11 15 0 8 9 1 9 10 1 10 11 1
+		 11 8 1 12 8 0 13 9 0 14 1 0 15 0 0 12 13 1 13 14 1 14 15 1 15 12 1;
+	setAttr -s 14 -ch 56 ".fc[0:13]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 16 13 -3 -13
+		mu 0 4 15 16 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 18 -11
+		mu 0 4 6 7 18 21
+		f 4 17 -12 -10 -14
+		mu 0 4 17 19 10 11
+		f 4 10 19 12 8
+		mu 0 4 12 20 14 13
+		f 4 24 21 -17 -21
+		mu 0 4 23 24 16 15
+		f 4 25 -15 -18 -22
+		mu 0 4 25 27 19 17
+		f 4 -19 14 26 -16
+		mu 0 4 21 18 26 29
+		f 4 -20 15 27 20
+		mu 0 4 14 20 28 22
+		f 4 1 7 -25 -7
+		mu 0 4 2 3 24 23
+		f 4 -23 -26 -8 -6
+		mu 0 4 1 27 25 3
+		f 4 -27 22 -1 -24
+		mu 0 4 29 26 9 8
+		f 4 -28 23 4 6
+		mu 0 4 22 28 0 2;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "735968C4-3847-F6A8-7CEB-F7BFD22F35B9";
@@ -32540,7 +32607,7 @@ select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
 select -ne :initialShadingGroup;
-	setAttr -s 45 ".dsm";
+	setAttr -s 46 ".dsm";
 	setAttr ".ro" yes;
 	setAttr -s 11 ".gn";
 select -ne :initialParticleSE;
@@ -32623,7 +32690,7 @@ connectAttr "polySplit76.out" "LeftStackShape2.i";
 connectAttr "polyCylinder3.out" "LeftStackShape3.i";
 connectAttr "polyExtrudeFace30.out" "LeftBatteryBoxShape.i";
 connectAttr "polyCube9.out" "SkidPlateShape.i";
-connectAttr "polySplit83.out" "pCubeShape1.i";
+connectAttr "polySplit83.out" "LeftQuarterFenderShape.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -32876,7 +32943,8 @@ connectAttr "RightStackShape3.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "LeftBatteryBoxShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "RightBatteryBoxShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "SkidPlateShape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "LeftQuarterFenderShape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "RightQuarterFenderShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId1.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId2.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId3.msg" ":initialShadingGroup.gn" -na;
