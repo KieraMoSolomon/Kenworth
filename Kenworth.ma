@@ -1,6 +1,6 @@
 //Maya ASCII 2017 scene
 //Name: Kenworth.ma
-//Last modified: Sun, Dec 11, 2016 10:07:38 PM
+//Last modified: Sun, Dec 11, 2016 10:09:19 PM
 //Codeset: UTF-8
 requires maya "2017";
 requires "stereoCamera" "10.0";
@@ -15,15 +15,15 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "4BCC64B8-834B-8EBC-2B7B-6C97DD37E3EE";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -71.785290323281686 49.693922723759272 -42.814094369679971 ;
-	setAttr ".r" -type "double3" -33.338352734329476 1316.9999999995337 0 ;
+	setAttr ".t" -type "double3" -148.56737101147536 100.4381596591071 -72.550471569993874 ;
+	setAttr ".r" -type "double3" -32.738352735858626 1322.2000000001676 0 ;
 	setAttr ".rp" -type "double3" 0 6.2172489379008766e-15 0 ;
 	setAttr ".rpt" -type "double3" 3.9034766474702878e-18 -4.0244345079259028e-18 2.236300273600676e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A39153AD-8049-73A7-16D9-AB8766A6B7EF";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 125.54341746343512;
+	setAttr ".coi" 221.41251407576402;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -30982,8 +30982,8 @@ createNode mesh -n "RightBatteryBoxShape" -p "RightBatteryBox";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "SkidPlate";
 	rename -uid "22BA3F3B-9F45-0AE6-D4A9-55A678D30D57";
-	setAttr ".t" -type "double3" 0.4572916301533736 -18.780973352987381 -19.139411168431693 ;
-	setAttr ".s" -type "double3" 21.230953803674222 0.61361171495075317 14.297399055073905 ;
+	setAttr ".t" -type "double3" 0.4572916301533736 -17.999607291938254 -33.9249947159798 ;
+	setAttr ".s" -type "double3" 21.230953803674222 0.61361171495075317 41.852075321335846 ;
 createNode mesh -n "SkidPlateShape" -p "SkidPlate";
 	rename -uid "9A731184-224B-11D5-9973-2F9EA97B2DB6";
 	setAttr -k off ".v";
