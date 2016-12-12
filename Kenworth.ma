@@ -1,6 +1,6 @@
 //Maya ASCII 2017 scene
 //Name: Kenworth.ma
-//Last modified: Sun, Dec 11, 2016 08:43:26 PM
+//Last modified: Sun, Dec 11, 2016 08:46:10 PM
 //Codeset: UTF-8
 requires maya "2017";
 requires "stereoCamera" "10.0";
@@ -15,8 +15,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "4BCC64B8-834B-8EBC-2B7B-6C97DD37E3EE";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 43.425336190741561 95.87993071703238 132.70022569750068 ;
-	setAttr ".r" -type "double3" -33.93835273434172 1092.9999999998824 8.1605408366149165e-16 ;
+	setAttr ".t" -type "double3" 96.007834852279672 -7.5907036432238897 150.77627207049738 ;
+	setAttr ".r" -type "double3" -3.338352734342291 1106.1999999998402 1.1077337047485467e-16 ;
 	setAttr ".rp" -type "double3" 0 6.2172489379008766e-15 0 ;
 	setAttr ".rpt" -type "double3" 3.9034766474702878e-18 -4.0244345079259028e-18 2.236300273600676e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -30237,6 +30237,21 @@ createNode mesh -n "RightAirCleanerShape" -p "RightAirCleaner";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
+createNode transform -n "pCylinder1";
+	rename -uid "66B7C955-6D44-5154-3AFF-71818248733B";
+	setAttr ".t" -type "double3" 16.587815879924793 -10.718151470939349 14.393883652327258 ;
+	setAttr ".s" -type "double3" 1 7.0500063038167839 1 ;
+createNode mesh -n "pCylinderShape1" -p "pCylinder1";
+	rename -uid "C69C24E7-A449-7F99-2E39-B184F40A18A0";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "735968C4-3847-F6A8-7CEB-F7BFD22F35B9";
 	setAttr -s 2 ".lnk";
@@ -31617,6 +31632,10 @@ createNode nurbsTessellate -n "nurbsTessellate2";
 	setAttr ".vn" 6;
 	setAttr ".ucr" no;
 	setAttr ".cht" 0.2;
+createNode polyCylinder -n "polyCylinder2";
+	rename -uid "3C0F17E1-3A42-D522-CF1B-18BA716A5A3A";
+	setAttr ".sc" 1;
+	setAttr ".cuv" 3;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -31635,7 +31654,7 @@ select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
 select -ne :initialShadingGroup;
-	setAttr -s 35 ".dsm";
+	setAttr -s 36 ".dsm";
 	setAttr ".ro" yes;
 	setAttr -s 11 ".gn";
 select -ne :initialParticleSE;
@@ -31713,6 +31732,7 @@ connectAttr "groupId2.id" "|Suspension29|Suspension3|Suspension2|transform1|Susp
 connectAttr "polyCylinder1.out" "RightFuelTankShape.i";
 connectAttr "makeNurbCircle1.oc" "nurbsCircleShape1.cr";
 connectAttr "nurbsTessellate2.op" "WheelShape1.i";
+connectAttr "polyCylinder2.out" "pCylinderShape1.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -31940,6 +31960,7 @@ connectAttr "WheelShape10.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "RightWheelCover1Shape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "LeftAirCleanerShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "RightAirCleanerShape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pCylinderShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId1.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId2.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId3.msg" ":initialShadingGroup.gn" -na;
